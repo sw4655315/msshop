@@ -1,0 +1,58 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-light nav-bar nav-title-slide-ios7" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+  <!--     <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons> -->
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-light">
+      <!-- <h1 class="title">菜单</h1> -->
+      <ion-list style="width:100%;">
+        <ion-item ng-click="search()" class="item item-icon-left left-search"> 
+          <i class="icon ion-ios-search-strong"></i>
+          搜索商品
+        </ion-item>
+      </ion-list>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close href="#/app/search" > 
+          优选推荐
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          办公
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          学生
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          体育
+        </ion-item>
+        <div class="item item-divider divider-small" ng-click="login()">
+          系统
+        </div>
+        <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+        <ion-item menu-close href="#/app/personal">
+          个人中心
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
