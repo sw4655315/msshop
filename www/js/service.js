@@ -52,7 +52,7 @@ angular.module(
 		kit.post(url,data
 			,function(res,header,config,status){
 				if(res || res.resCode !== 200){
-					msg.alert(res.resMsg);
+					kit.alert(res.resMsg);
 					return false;
 				} 
 				success(res.resObj);
@@ -74,7 +74,7 @@ angular.module(
 		kit.get(url,data
 			,function(data,header,config,status){
 				if(data.resCode !== 200){
-					msg.alert(data.resMsg);
+					kit.alert(data.resMsg);
 					return false;
 				}
 				success(data.resObj);

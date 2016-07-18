@@ -1,6 +1,5 @@
 angular.module(
   'starter.constant', [])
-.value('port',{url : 'http://g.cn/app'})
 /**
  * 配置路由
  */
@@ -94,3 +93,5 @@ angular.module(
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 })
+.value('port',{url : 'http://g.cn/app'})
+
