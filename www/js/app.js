@@ -3,7 +3,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var ionicapp = angular.module('starter', ['ionic', 'starter.constant','starter.controllers','starter.kit']);
+var ionicapp = angular.module('starter', [
+  'ionic'
+  ,'starter.constant'
+  ,'starter.controllers'
+  ,'starter.kit'
+  ,'ionic-citypicker']);
 Mock.mockjax(ionicapp);
 ionicapp.run(function($ionicPlatform,$rootScope,$ionicLoading) {
   $ionicPlatform.ready(function() {
@@ -20,7 +25,7 @@ ionicapp.run(function($ionicPlatform,$rootScope,$ionicLoading) {
     }
   });
   $rootScope.loading = function(){
-    $ionicLoading.show({template: '加载中...'});
+    $ionicLoading.show();
   }
   $rootScope.loaded = function(){
     $ionicLoading.hide();

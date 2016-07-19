@@ -51,7 +51,7 @@ angular.module(
 	kit.autoPost = function(url,data,success,error){
 		kit.post(url,data
 			,function(res,header,config,status){
-				if(res || res.resCode !== 200){
+				if(!res || res.resCode !== 200){
 					kit.alert(res.resMsg);
 					return false;
 				} 
@@ -72,14 +72,14 @@ angular.module(
 	};
 	kit.autoGet = function(url,data,success,error){
 		kit.get(url,data
-			,function(data,header,config,status){
-				if(data.resCode !== 200){
-					kit.alert(data.resMsg);
+			,function(res,header,config,status){
+				if(!res || res.resCode !== 200){
+					kit.alert(res.resMsg);
 					return false;
 				}
-				success(data.resObj);
-			},function(data,header,config,status){
-				console.error(data);
+				success(res.resObj);
+			},function(res,header,config,status){
+				console.error(res);
 		});
 	};
 	return kit;
