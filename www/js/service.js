@@ -7,7 +7,7 @@ angular.module(
 
 	kit.isEmpty = function(obj){
 		return obj === void 0 
-			|| typeof(obj) === void 0 
+			|| typeof obj  === void 0 
 			|| obj === null 
 			|| obj === ''
 			|| obj === 'null';
