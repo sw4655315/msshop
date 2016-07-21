@@ -1,0 +1,53 @@
+<ion-view view-title="中学书店">
+    <div class="float-operate" style="">
+        <div class="button-bar bar-light">
+          <a href="#/app/personal" class="button"><i class="ion-ios-person-outline"></i></a>
+          <a class="button"><i class="ion-ios-heart-outline"></i></a>
+          <a class="button"><i class="ion-ios-cart-outline"></i></a>
+        </div>
+    </div>
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="reload()"></ion-refresher>
+    <div ng-repeat="v in pLists">
+    <div class="row p-list" ng-if="$index % 2 == 0" ng-init="next=getNext($index)">
+      <div class="col col-50 card-l">
+        <a class="list card" href="#/app/detail">
+          <div class="item item-image">
+            <!-- <img ng-src="{{v.main_photo}}" onload="this.src='../img/loading.png'" complete="this.src='{{v.main_photo}}'" onError="this.src='../img/productDefault.png'"> -->
+            <img ng-src="{{v.main_photo}}"  onError="this.src='../img/productDefault.png'">
+          </div>
+          <div class="item card-body">
+            <p>
+                <span class="assertive n-price">¥{{v.nprice}}</span>
+                <span class="grey o-price">¥{{v.oprice}}</span>
+                <span class="promote grey">上新</span>
+            </p>
+            <p class="summary">
+                {{v.title}} 
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="col col-50 card-r" ng-if="null != next">
+        <a class="list card" href="#/app/detail">
+          <div class="item item-image">
+            <img ng-src="{{next.main_photo}}"  onError="this.src='../img/productDefault.png'">
+          </div>
+          <div class="item card-body">
+            <p>
+                <span class="assertive n-price">¥{{next.nprice}}</span>
+                <span class="grey o-price">¥{{next.oprice}}</span>
+                <span class="promote grey">上新</span>
+            </p>
+            <p class="summary">
+                {{next.title}}
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    </div>
+    <!-- ion-infinite-scroll 上拉加载数据指令 distance默认1% nf-if的值为false时，就禁止执行on-infinite  -->
+    <ion-infinite-scroll ng-if="page.last" on-infinite="load()" distance="1%" ></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
