@@ -2,6 +2,12 @@
 /*
  p - product
  */
+.p-list .item-image{
+    height: 50vw;
+    background-image: url(../img/MSSHOP.png);
+    background-repeat: no-repeat;
+    background-size: 50vw;
+}
 .menu-left .bar-light{
     border-color: #4042D7;
 }
