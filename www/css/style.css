@@ -8,6 +8,10 @@
     background-repeat: no-repeat;
     background-size: 50vw;
 }
+
+.toggle-small.item-toggle .toggle{
+    top:13px !important;
+}
 .menu-left .bar-light{
     border-color: #4042D7;
 }

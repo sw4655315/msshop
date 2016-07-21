@@ -5,7 +5,29 @@
       </a>
 </ion-nav-buttons>
   <ion-content>
-  <ion-list>
-      </ion-list>
+    <ion-list>
+        <ion-item class="item item-input">
+            <span class="input-label" style="max-width: 27%;">收货人：</span>
+            <input type="text" autofocus="autofocus">
+        </ion-item>
+        <ion-item class="item item-input">
+            <span class="input-label" style="max-width: 27%;">手机号码：</span>
+            <input type="text">
+        </ion-item>
+        <ion-item class="item item-input">
+            <span class="input-label" style="max-width: 27%;">所在地区：</span>
+            <input type="text">
+        </ion-item>
+        <ion-item class="item item-input">
+            <span class="input-label" style="max-width: 27%;">详细地址：</span>
+            <ionic-city-picker placeholder="出发城市" tag="-" backdrop="true" backdrop-click-to-close="false" css-class="xxx" okText="确定" button-clicked="vm.cb()" ></ionic-city-picker>
+        </ion-item>
+        <div class="item item-divider divider-small"></div>
+        <ion-item class="item-toggle-c">
+            <ion-toggle toggle-class="toggle-calm">设置为默认收货地址</ion-toggle>
+        </ion-item>
+        <div class="item item-divider divider-small"></div>
+        <button class="button button-full button-light loginout margin-less">删除此地址</button>
+    </ion-list>
   </ion-content>
 </ion-view>
