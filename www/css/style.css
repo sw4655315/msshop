@@ -2,7 +2,9 @@
 /*
  p - product
  */
-
+.item-image img:first-child, .item-image .list-img{
+      height: 50vw;
+}
 
 .toggle-small.item-toggle .toggle{
     top:13px !important;
