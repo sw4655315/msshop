@@ -11,7 +11,7 @@
     <div ng-repeat="v in pLists">
     <div class="row p-list" ng-if="$index % 2 == 0" ng-init="next=getNext($index)">
       <div class="col col-50 card-l">
-        <a class="list card" href="#/app/detail">
+        <a class="list card" ng-href="#/app/detail/{{v.ids}}">
           <div class="item item-image">
             <!-- <img ng-src="{{v.main_photo}}" onload="this.src='../img/loading.png'" complete="this.src='{{v.main_photo}}'" onError="this.src='../img/productDefault.png'"> -->
             <img ng-src="{{v.main_photo}}"  onError="this.src='../img/productDefault.png'">
@@ -29,7 +29,7 @@
         </a>
       </div>
       <div class="col col-50 card-r" ng-if="null != next">
-        <a class="list card" href="#/app/detail">
+        <a class="list card" ng-href="#/app/detail/{{next.ids}}">
           <div class="item item-image">
             <img ng-src="{{next.main_photo}}"  onError="this.src='../img/productDefault.png'">
           </div>

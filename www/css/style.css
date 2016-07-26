@@ -2,6 +2,15 @@
 /*
  p - product
  */
+.no-padding{
+    padding:0 !important;
+}
+.no-border{
+    border:0 !important;
+}
+.no-margin{
+    margin:0 !important;
+}
 .p-list .item-image{
     height: 50vw;
     background-image: url(../img/MSSHOP.png);
@@ -11,6 +20,7 @@
 
 .toggle-small.item-toggle .toggle{
     top:13px !important;
+    right: 3px;
 }
 .menu-left .bar-light{
     border-color: #4042D7;
@@ -181,4 +191,16 @@
     height: 44px;
     border-radius: 50%;
     top:4px;
+}
+
+/**
+ * detail.html
+ */
+.detail-bottom{
+
+}
+.detail-bottom .button{
+    border-radius: 0 !important;
+    line-height: 43px !important;
+    font-size: 1rem !important;
 }

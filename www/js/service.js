@@ -84,6 +84,13 @@ angular.module(
 	};
 	return kit;
 })
+.factory('$picker',function($kit){
+	$picker = {};
+	$picker.city = function(){
+		
+	}
+	return kit;
+})
 ;
 
 
