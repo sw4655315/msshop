@@ -1,13 +1,7 @@
 <ion-view  >
 <style>
-  .nav-bar{
-    background: transparent !important;
-    border:none;
-  }
-  .nav-bar .back-text,
-  .nav-bar .title{
-    display: none !important;
-  }
+  ion-header-bar.nav-bar{background: transparent !important;border:none;}
+  ion-header-bar.nav-bar .back-text,ion-header-bar.nav-bar .title{display: none !important;}
 </style>
 <ion-nav-buttons side="right">
   <i class="icon ion-android-share-alt" style="font-size:1.5rem;margin:6px 6px 0 0;"></i>
@@ -25,6 +19,21 @@
     <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
   </ion-slide>
 </ion-slide-box>
-
+  <div class="row">
+    <div class="col col-80">
+    <h3>商品标题</h3>
+    <p>价格、描述</p>
+    </div>
+    <div class="col col-20">
+    .20
+    </div>
+  </div>
   </ion-content>
+  <ion-footer-bar class="no-padding detail-bottom">
+    <div class="button-bar">
+    <a class="button button-light"><i class="ion-ios-cart-outline"></i>&nbsp;(0)</a>
+    <a class="button button-balanced">加入购物车</a>
+    <a class="button button-assertive">立即购买</a>
+  </div>
+  </ion-footer-bar>
 </ion-view>

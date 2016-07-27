@@ -26,7 +26,7 @@ angular.module(
       }
     })
   .state('app.detail',{
-    url: '/detail',
+    url: '/detail/:pids',
     views:{
       'menuContent': {
         templateUrl:'templates/detail.html',
@@ -72,7 +72,7 @@ angular.module(
     }
   })
   .state('app.addressEdit',{
-    url: '/addressEdit',
+    url: '/addressEdit/:addressid',
     views:{
       'menuContent': {
         templateUrl:'templates/addressEdit.html',
