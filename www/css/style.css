@@ -2,6 +2,33 @@
 /*
  p - product
  */
+html{
+    font-family: '黑体';
+}
+.badge-r{
+    border-radius: 0 !important;
+    font-size: .8rem;
+}
+.badge-small{
+    padding: 0px 5px;
+}
+.badge-assertive-outline{
+    background: transparent !important;
+    color: #ef473a !important;
+    border:1px solid #ef473a !important;
+}
+.divider-line{
+    border-top: 1px solid #ccc !important;
+    margin: 0 10px 0;
+    padding:0;
+    height: 1px;
+    border:none;
+}
+.divider-rec{
+    width: 100vw;
+    padding:5px 0;
+    background-color: #eee;
+}
 .no-padding{
     padding:0 !important;
 }
@@ -196,11 +223,57 @@
 /**
  * detail.html
  */
-.detail-bottom{
-
-}
 .detail-bottom .button{
     border-radius: 0 !important;
     line-height: 43px !important;
     font-size: 1rem !important;
+}
+.main-photo{
+    width: 100vw;
+    height: 100vw;
+    background-image: url('http://dummyimage.com/400x400/ffffff&text=MSSHOP');
+    background-repeat:no-repeat;
+}
+.icon-top-btn{
+    line-height: 1rem !important;
+}
+.icon-collected{
+    color: #f55;
+}
+.d-title{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.cprice{
+    font-size: 2rem;
+    color: #f55;
+}
+.price{
+    text-decoration: line-through;
+    color:#aaa;
+}
+.promot-tag{
+    margin-left: .5rem;
+}
+.gain-bookmark{
+    margin-left: .5rem;
+}
+.promot-info .promot-head{
+    font-size: 1.2rem;
+}
+.quality-assurance .qualitys{
+    margin: 0;
+    padding-left: 10px;
+    font-size: .8rem;
+}
+.d-propertys .propertys{
+    padding:0 10px;
+}
+.d-propertys .propertys-item{
+    background: transparent;
+    color: #000;
+    border:1px solid;
+    padding:.2rem 2rem;
+    margin: .2rem 0; 
 }

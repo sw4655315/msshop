@@ -6,9 +6,9 @@
 <ion-nav-buttons side="right">
   <i class="icon ion-android-share-alt" style="font-size:1.5rem;margin:6px 6px 0 0;"></i>
 </ion-nav-buttons>
-  <ion-content class="no-header">
+  <ion-content class="no-header" has-bouncing="false">
   <!-- <ion-slide-box active-slide="myActiveSlide"> -->
-  <ion-slide-box>
+  <ion-slide-box class="main-photo">
   <ion-slide>
     <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
   </ion-slide>
@@ -21,13 +21,68 @@
 </ion-slide-box>
   <div class="row">
     <div class="col col-80">
-    <h3>商品标题</h3>
-    <p>价格、描述</p>
+    <h4 class="d-title">商品标题商品标题商品标题商品标题商品标题</h4>
+    <p>
+      <span class="cprice">¥39</span>
+      <span class="price">¥62</span>
+      <span class="promot-tag"><span class="badge badge-r badge-small badge-assertive">包邮</span></span>
+      <span class="gain-bookmark">+39</span>
+    </p>
     </div>
     <div class="col col-20">
-    .20
+      <label class="button light-bg icon-top-btn">
+        <i class="icon ion-ios-heart-outline icon-collected"></i>
+        <span>收藏</span>
+      </label>
     </div>
   </div>
+  <!-- <div class="promot-info">
+    <hr class="divider-line">
+    <div class="row">
+      <div class="col col-20 promot-head">
+        <span>促销</span>
+      </div>
+      <div class="col col-80">
+        <div>
+          <span class="badge badge-r badge-small badge-assertive-outline">满就减</span>&nbsp;满2件减5元，满3件减10元
+        </div>
+        <div>
+          <span class="badge badge-r badge-small badge-assertive-outline">满就减</span>&nbsp;满2件减5元，满3件减10元
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="quality-assurance">
+    <hr class="divider-line">
+    <div class="row qualitys">
+     <span><i class="ion-android-checkmark-circle assertive"></i>&nbsp;100%人工质检</span>&nbsp;&nbsp;
+      <span><i class="ion-android-checkmark-circle assertive"></i>&nbsp;24小时发货</span>&nbsp;&nbsp;
+      <span><i class="ion-android-checkmark-circle assertive"></i>&nbsp;7天无理由退货</span>&nbsp;&nbsp;
+    </div>
+  </div> -->
+  <div class="d-propertys">
+    <div class="divider-rec"></div>
+    <div class="propertys">
+      <h5>颜色</h5>
+      <div class="">
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+      </div>
+    </div>
+    <div class="propertys">
+      <h5>规格</h5>
+      <div>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+      </div>
+    </div>
+    <div class="divider-rec"></div>
+  </div>
+    
   </ion-content>
   <ion-footer-bar class="no-padding detail-bottom">
     <div class="button-bar">
