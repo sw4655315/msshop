@@ -275,5 +275,10 @@ html{
     color: #000;
     border:1px solid;
     padding:.2rem 2rem;
-    margin: .2rem 0; 
+    margin: .4rem .4rem; 
+    width: 27.4vw;
+}
+.d-propertys .propertys-item.active{
+    background-color: #f55;
+    border-color: #f55;
 }
