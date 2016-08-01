@@ -110,7 +110,7 @@ angular.module('starter.controllersIndex', [])
   $scope.pLists = [];
   $scope.loadOver = false;
   $scope.load = function(){
-    $kit.autoPost('/product/promote',{a:1},function(json){
+    $kit.autoPost('/product/list',{a:1},function(json){
       $scope.pLists = $scope.pLists.concat(json.pLists);
       $scope.page = json.page;
       $scope.$broadcast('scroll.refreshComplete');

@@ -9,7 +9,7 @@
   <ion-content>
     <ion-refresher pulling-text="下拉刷新" on-refresh="reload()"></ion-refresher>
     <div ng-repeat="v in pLists">
-    <div class="row p-list" ng-if="$index % 2 == 0" ng-init="next=getNext($index)">
+    <div class="row p-list" ng-if="$even" ng-init="next=getNext($index)">
       <div class="col col-50 card-l">
         <a class="list card" ng-href="#/app/detail/{{v.ids}}">
           <div class="item item-image">

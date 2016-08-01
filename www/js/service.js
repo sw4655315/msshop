@@ -3,8 +3,8 @@ angular.module(
   [])
 .factory('$kit',function($ionicPopup,$http){
 	var kit = {};
-	kit.uri = 'http://g.cn/app';
-
+	kit.uri = 'http://rap.taobao.org/mockjsdata/5933/app';
+// http://rap.taobao.org/mockjsdata/5933/app/product/list
 	kit.isEmpty = function(obj){
 		return obj === void 0 
 			|| typeof obj  === void 0 
