@@ -3,15 +3,28 @@ angular.module(
   [])
 .factory('$kit',function($ionicPopup,$http){
 	var kit = {};
-	kit.uri = 'http://rap.taobao.org/mockjsdata/5933/app';
+	kit.uri = 'http://rap.taobao.org/mockjsdata/5933/app/';
 
 // http://rap.taobao.org/mockjsdata/5933/app/product/list
 	kit.isEmpty = function(obj){
 		return obj === void 0 
-			|| typeof obj  === void 0 
+			|| typeof obj  === "undefined"
 			|| obj === null 
 			|| obj === ''
 			|| obj === 'null';
+	}
+	kit.isExist = function(obj){
+		if(kit.isEmpty(obj)) return !1;
+		if(angular.isArray(obj)) return obj.length > 0;
+		if(angular.isObject(obj)) return !isEmptyObject(obj);
+		return !0;
+	}
+
+	function isEmptyObject(e){
+		var t;
+		for (t in e) 
+			return !1;
+		return !0;
 	}
 
 	kit.alert = function(msg,yes,title){

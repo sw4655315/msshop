@@ -65,7 +65,7 @@
     <div class="divider-rec"></div>
     <div class="propertys">
       <h5>颜色</h5>
-      <div ng-init="color-index=0;">
+      <div >
         <button class="propertys-item active" ng-class="">红色</button>
         <button class="propertys-item">红色</button>
         <button class="propertys-item">红色</button>
@@ -74,7 +74,7 @@
     </div>
     <div class="propertys" >
       <h5>规格</h5>
-      <div ng-init="size-index=0;">
+      <div >
         <button class="propertys-item">红色</button>
         <button class="propertys-item">红色</button>
         <button class="propertys-item">红色</button>
@@ -83,35 +83,30 @@
     </div>
     <div class="divider-rec"></div>
   </div>
-  <div class="d-menus">
-    <ion-tabs class="tabs-light">
-
-    <ion-tab title="商品信息" >
+  <div class="d-menus" ng-init="menu_active_index=1;">
+      <div class="button-bar full-btn">
+        <a class="button button-light" ng-class="{1:'active'}[menu_active_index]" ng-click="menu_active_index=1;">商品信息</a>
+        <a class="button button-light" ng-class="{2:'active'}[menu_active_index]" ng-click="menu_active_index=2;">商品参数</a>
+        <a class="button button-light" ng-class="{3:'active'}[menu_active_index]" ng-click="menu_active_index=3;">咨询与售后</a>
+      </div>
       <!-- 标签 1 内容 -->
-      <div class="row d-m-info">
-        <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-        <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-        <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-        <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-        <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+      <div ng-if="menu_active_index==1" class="row d-m-info">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
       </div>
-    </ion-tab>
 
-    <ion-tab title="商品参数" >
       <!-- 标签 2 内容 -->
-      <div class="row d-m-argument">
-      商品信息
+      <div ng-if="menu_active_index==2" class="row d-m-argument">
+      商品参数
       </div>
-    </ion-tab>
 
-    <ion-tab title="咨询与售后" >
       <!-- 标签 3 内容 -->
-      <div class="row d-m-after-sales">
-      商品信息
+      <div ng-if="menu_active_index==3" class="row d-m-after-sales">
+      咨询与售后
       </div>
-    </ion-tab>
-
-  </ion-tabs>
   </div>
   <div>
     

@@ -108,11 +108,11 @@ angular.module('starter.controllersIndex', [])
 })
 
 .controller('PlaylistsCtrl', function($scope,$rootScope,$kit,$stateParams) {
-  $scope.paras = $stateParams;
+  $scope.pageNumber = $stateParams.pageNumber || 1;
   $scope.pLists = [];
   $scope.loadOver = false;
   $scope.load = function(){
-    $kit.autoPost('/product/list',{a:1},function(json){
+    $kit.autoPost('product/list/'+$scope.pageNumber++,{a:1},function(json){
       $scope.pLists = $scope.pLists.concat(json.pLists);
       $scope.page = json.page;
     },false,function(){
