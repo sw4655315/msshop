@@ -7,7 +7,8 @@ var ionicapp = angular.module('starter', [
   'ionic'
   ,'starter.constant'
   ,'starter.controllers'
-  ,'starter.kit']);
+  ,'starter.kit'
+  ,'ionicLazyLoad']);
 Mock.mockjax(ionicapp);
 ionicapp.run(function($ionicPlatform,$rootScope,$ionicLoading) {
   $ionicPlatform.ready(function() {
