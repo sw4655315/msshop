@@ -6,9 +6,9 @@
 <ion-nav-buttons side="right">
   <i class="icon ion-android-share-alt" style="font-size:1.5rem;margin:6px 6px 0 0;"></i>
 </ion-nav-buttons>
-  <ion-content class="no-header" has-bouncing="false">
+  <ion-content class="no-header has-footer" has-bouncing="false">
   <!-- <ion-slide-box active-slide="myActiveSlide"> -->
-  <ion-slide-box class="main-photo">
+  <ion-slide-box class="main-photo" does-continue="true" autoplay="true">
   <ion-slide>
     <img src="http://dummyimage.com/400x400&text=Daniel Clark" style="width:100%;">
   </ion-slide>
@@ -30,8 +30,9 @@
     </p>
     </div>
     <div class="col col-20">
-      <label class="button light-bg icon-top-btn">
-        <i class="icon ion-ios-heart-outline icon-collected"></i>
+      <label class="button collected light-bg icon-top-btn">
+        <!-- <i class="icon ion-ios-heart-outline icon-collected"></i> -->
+        <i class="icon ion-ios-heart icon-collected"></i>
         <span>收藏</span>
       </label>
     </div>
@@ -65,7 +66,7 @@
     <div class="propertys">
       <h5>颜色</h5>
       <div ng-init="color-index=0;">
-        <button class="propertys-item active">红色</button>
+        <button class="propertys-item active" ng-class="">红色</button>
         <button class="propertys-item">红色</button>
         <button class="propertys-item">红色</button>
         <button class="propertys-item">红色</button>
@@ -82,24 +83,42 @@
     </div>
     <div class="divider-rec"></div>
   </div>
-  <div>
-    <div class="button-bar no-radius">
-      <a class="button button-light"><i class="ion-ios-cart-outline"></i>&nbsp;(0)</a>
-      <a class="button button-balanced">加入购物车</a>
-      <a class="button button-assertive">立即购买</a>
-    </div>
+  <div class="d-menus">
+    <ion-tabs class="tabs-light">
+
+    <ion-tab title="商品信息" >
+      <!-- 标签 1 内容 -->
+      <div class="row d-m-info">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+      </div>
+    </ion-tab>
+
+    <ion-tab title="商品参数" >
+      <!-- 标签 2 内容 -->
+      <div class="row d-m-argument">
+      商品信息
+      </div>
+    </ion-tab>
+
+    <ion-tab title="咨询与售后" >
+      <!-- 标签 3 内容 -->
+      <div class="row d-m-after-sales">
+      商品信息
+      </div>
+    </ion-tab>
+
+  </ion-tabs>
   </div>
   <div>
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
-  </div>
     
+  </div>
   </ion-content>
-  <ion-footer-bar class="no-padding detail-bottom">
-    <div class="button-bar">
+  <ion-footer-bar class="no-padding detail-bottom ">
+    <div class="button-bar full-btn">
       <a class="button button-light"><i class="ion-ios-cart-outline"></i>&nbsp;(0)</a>
       <a class="button button-balanced">加入购物车</a>
       <a class="button button-assertive">立即购买</a>

@@ -230,7 +230,7 @@ html{
 /**
  * detail.html
  */
-.detail-bottom .button{
+.full-btn .button{
     border-radius: 0 !important;
     line-height: 43px !important;
     font-size: 1rem !important;
@@ -293,6 +293,23 @@ html{
 .d-propertys .propertys-item.active{
     background-color: #f55;
     border-color: #f55;
+}
+
+.button.collected.activated,
+.button.collected.active{
+    background-color:#fff;
+    color:#000;
+    border:0;
+}
+.d-menus .tab-nav{
+    position: static;
+}
+.d-menus .tab-item-active{
+    border-color:#f55 !important;
+}
+.d-menus .tab-item{
+    border-bottom:2px solid #fff;
+    font-size: 1rem;
 }
 
 /* ========== login.html ==============*/

@@ -5,6 +5,7 @@ angular.module(
 	var kit = {};
 	kit.uri = 'http://rap.taobao.org/mockjsdata/5933/app';
 
+// http://rap.taobao.org/mockjsdata/5933/app/product/list
 	kit.isEmpty = function(obj){
 		return obj === void 0 
 			|| typeof obj  === void 0 
