@@ -38,6 +38,13 @@ html{
 .no-margin{
     margin:0 !important;
 }
+.no-radius{
+    border-radius: 0 !important;
+}
+.button-bar.no-radius > .button:last-child,
+.button-bar.no-radius > .button:first-child{
+    border-radius: 0 !important;
+}
 .p-list .item-image{
     height: 50vw;
     background-image: url(../img/MSSHOP.png);
@@ -238,6 +245,7 @@ html{
     line-height: 1rem !important;
 }
 .icon-collected{
+    display: block;
     color: #f55;
 }
 .d-title{
@@ -274,11 +282,24 @@ html{
     background: transparent;
     color: #000;
     border:1px solid;
-    padding:.2rem 2rem;
-    margin: .4rem .4rem; 
-    width: 27.4vw;
+    padding:.2rem 0;
+    margin: .4rem 0; 
+    width: 30%;
+}
+.d-propertys .propertys-item:nth-child(3n+2){
+    margin-left:3.8%;
+    margin-right:3.8%; 
 }
 .d-propertys .propertys-item.active{
     background-color: #f55;
     border-color: #f55;
+}
+
+/* ========== login.html ==============*/
+.login-logo{
+    height: 5rem;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    line-height: 5rem;
 }

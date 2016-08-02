@@ -1,6 +1,6 @@
 angular.module('starter.controllersIndex', [])
 
-.controller('index', function($scope, $ionicModal, $timeout) {
+.controller('index', function($scope, $ionicModal, $timeout,$state) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -26,18 +26,20 @@ angular.module('starter.controllersIndex', [])
 
   // Open the login modal
   $scope.login = function() {
-    $scope.modal.show();
+    $state.go('app.address');
+    // $scope.modal.show();
   };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    $state.go('app.address');
+    // console.log('Doing login', $scope.loginData);
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    // // Simulate a login delay. Remove this and replace with your login
+    // // code if using a login system
+    // $timeout(function() {
+    //   $scope.closeLogin();
+    // }, 1000);
   };
 })
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,$ionicSideMenuDelegate) {
@@ -110,11 +112,12 @@ angular.module('starter.controllersIndex', [])
   $scope.pLists = [];
   $scope.loadOver = false;
   $scope.load = function(){
-    $kit.autoPost('/product/promote',{a:1},function(json){
+    $kit.autoPost('/product/list',{a:1},function(json){
       $scope.pLists = $scope.pLists.concat(json.pLists);
       $scope.page = json.page;
+    },false,function(){
       $scope.$broadcast('scroll.refreshComplete');
-      $scope.$broadcast('scroll.infiniteScrollComplete'); 
+      $scope.$broadcast('scroll.infiniteScrollComplete');
     })
   }
   $scope.reload = function(){
@@ -204,6 +207,8 @@ angular.module('starter.controllersIndex', [])
   //     // statements_def
   //     break;
   // }
-
+})
+.controller('loginCtrl', function($scope, $stateParams) {
+  $scope.paras = $stateParams;
 })
 ;

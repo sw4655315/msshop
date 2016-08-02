@@ -16,6 +16,15 @@ angular.module(
     templateUrl: 'templates/search.html',
     controller: 'searchCtrl'
   })
+  .state('app.login', {
+    url: '/login',
+    views: {
+        'menuContent': {
+          templateUrl: 'templates/login.html',
+          controller: 'loginCtrl'
+        }
+      }
+  })
     .state('app.playlists', {
       url: '/playlists',
       views: {
