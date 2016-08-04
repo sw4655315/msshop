@@ -98,6 +98,15 @@ angular.module(
       }
     }
   })
+    .state('app.cart',{
+    url: '/cart/:pageNumber',
+    views:{
+      'menuContent': {
+        templateUrl:'templates/cart.html',
+        controller: 'cartCtrl'
+      }
+    }
+  })
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');

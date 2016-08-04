@@ -211,4 +211,7 @@ angular.module('starter.controllersIndex', [])
 .controller('loginCtrl', function($scope, $stateParams) {
   $scope.paras = $stateParams;
 })
+.controller('cartCtrl', function($scope, $stateParams) {
+  $scope.paras = $stateParams;
+})
 ;
