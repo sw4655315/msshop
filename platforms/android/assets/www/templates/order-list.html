@@ -6,7 +6,7 @@
           <a class="button"><i class="ion-ios-cart-outline"></i></a>
         </div>
     </div>
-  <ion-content>
+  <ion-content lazy-scroll has-bouncing="false">
     <ion-refresher pulling-text="下拉刷新" on-refresh="reload()"></ion-refresher>
     <div ng-repeat="v in pLists">
     <div class="row p-list" ng-if="$index % 2 == 0" ng-init="next=getNext($index)">
@@ -14,7 +14,7 @@
         <a class="list card" href="#/app/detail">
           <div class="item item-image">
             <!-- <img ng-src="{{v.main_photo}}" onload="this.src='../img/loading.png'" complete="this.src='{{v.main_photo}}'" onError="this.src='../img/productDefault.png'"> -->
-            <img ng-src="{{v.main_photo}}"  onError="this.src='../img/productDefault.png'">
+            <img image-lazy-src="{{v.main_photo}}"  onError="this.src='../img/productDefault.png'">
           </div>
           <div class="item card-body">
             <p>
@@ -31,7 +31,7 @@
       <div class="col col-50 card-r" ng-if="null != next">
         <a class="list card" href="#/app/detail">
           <div class="item item-image">
-            <img ng-src="{{next.main_photo}}"  onError="this.src='../img/productDefault.png'">
+            <img image-lazy-src="{{next.main_photo}}"  onError="this.src='../img/productDefault.png'">
           </div>
           <div class="item card-body">
             <p>

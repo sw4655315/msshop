@@ -8,7 +8,7 @@ var ionicapp = angular.module('starter', [
   ,'starter.constant'
   ,'starter.controllers'
   ,'starter.kit'
-  ,'ionic-citypicker']);
+  ,'ionicLazyLoad']);
 Mock.mockjax(ionicapp);
 ionicapp.run(function($ionicPlatform,$rootScope,$ionicLoading) {
   $ionicPlatform.ready(function() {

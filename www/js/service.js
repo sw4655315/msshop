@@ -63,7 +63,7 @@ angular.module(
 		.error(errorFun || function(){})
 		.finally(finallyFun||function(){});
 	};
-	kit.autoPost = function(url,data,success,error,finallyFun){
+	kit.ap = kit.autoPost = function(url,data,success,error,finallyFun){
 		kit.post(url,data
 			,function(res,header,config,status){
 				if(!res || res.resCode !== 200){
@@ -86,7 +86,7 @@ angular.module(
 		.error(error || function(){})
 		.finally(finallyFun||function(){});
 	};
-	kit.autoGet = function(url,data,success,error,finallyFun){
+	kit.ag = kit.autoGet = function(url,data,success,error,finallyFun){
 		kit.get(url,data
 			,function(res,header,config,status){
 				if(!res || res.resCode !== 200){
@@ -100,13 +100,58 @@ angular.module(
 	};
 	return kit;
 })
-.factory('$picker',function($kit){
-	$picker = {};
-	$picker.city = function(){
-		
-	}
-	return kit;
+.factory('_stg',function(localStorageService,$kit){
+	console.info(localStorageService);
+	/**
+     * 缓存服务
+     */
+    var stg = angular.extend({},localStorageService);
+    //缓存的sessionid
+    stg.sid = function(){
+        return stg.get('sid');
+    }
+    //缓存的用户
+    stg.user = function(){
+        return stg.get('user');
+    }
+    //清除用户信息
+    stg.signout = function(){
+        stg.set('sid',null);
+        stg.set('user',null);
+        $state.reload();
+    }
+
+    stg.isSignin = function(){
+        return !isEmpty(stg.get('sid'));
+    }
+
+    stg.needSignin = function(flag){
+        if(isEmpty(stg.get('sid'))){
+            $state.go('login',{flag:flag || 0});
+            return !1;
+        }
+        return !0;
+    }
+    stg.search_histry={
+    	get:function(){
+    		return stg.get('search_histry');
+    	},
+    	put:function(str){
+    		var h = stg.get('search_histry') || [];
+    		h.push(str);
+    		stg.set('search_histry',h);
+    	},
+    	remove:function(str){
+    		var h = stg.get('search_histry') || [];
+    	}
+    }
+    return stg;
 })
+.config(function(localStorageServiceProvider){
+        //本地存储设置
+        localStorageServiceProvider.prefix = 'msshop';
+        // localStorageServiceProvider.storageType = "sessionStorage";
+    })
 ;
 
 

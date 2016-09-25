@@ -9,7 +9,7 @@ var ionicapp = angular.module('starter', [
   ,'starter.controllers'
   ,'starter.kit'
   ,'ionicLazyLoad']);
-Mock.mockjax(ionicapp);
+// Mock.mockjax(ionicapp);
 ionicapp.run(function($ionicPlatform,$rootScope,$ionicLoading) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

@@ -20,13 +20,13 @@
     <ion-header-bar class="bar-light">
       <!-- <h1 class="title">菜单</h1> -->
       <ion-list style="width:100%;">
-        <ion-item ng-click="search()" class="item item-icon-left left-search"> 
+        <ion-item ng-click="search.show()" class="item item-icon-left left-search"> 
           <i class="icon ion-ios-search-strong"></i>
           搜索商品
         </ion-item>
       </ion-list>
     </ion-header-bar>
-    <ion-content>
+    <ion-content scroll="false">
       <ion-list>
         <ion-item menu-close href="#/app/search" > 
           优选推荐

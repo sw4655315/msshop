@@ -16,7 +16,8 @@ Mock.mock('http://g.cn/app/product/promote', {
 	            'main_photo': Mock.Random.image('200x200', Mock.Random.color(), '@name'),
 	            'nprice|100-100000': 100,
 	            'oprice|1-100': 100,
-	            'title': '@csentence'
+	            'title': '@csentence',
+	            'ids|1-100':1
 	        }
 	    ]
 	}

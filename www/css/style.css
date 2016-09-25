@@ -57,7 +57,12 @@ html{
     right: 3px;
 }
 .menu-left .bar-light{
-    border-color: #4042D7;
+    border-color:#ccc;
+    padding: 0px;
+}
+.menu-left .bar-light ion-item{
+    padding-top: 6px;
+    padding-bottom: 5px;
 }
 .item-divider.divider-small{
     padding-top: 0;
@@ -360,3 +365,6 @@ html{
 .cart-count .cart-op.op-add{
     margin-left: 5px;
 }
+
+
+

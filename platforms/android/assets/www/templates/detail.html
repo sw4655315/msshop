@@ -1,30 +1,119 @@
 <ion-view  >
 <style>
-  .nav-bar{
-    background: transparent !important;
-    border:none;
-  }
-  .nav-bar .back-text,
-  .nav-bar .title{
-    display: none !important;
-  }
+  ion-header-bar.nav-bar{background: transparent !important;border:none;}
+  ion-header-bar.nav-bar .back-text,ion-header-bar.nav-bar .title{display: none !important;}
 </style>
 <ion-nav-buttons side="right">
   <i class="icon ion-android-share-alt" style="font-size:1.5rem;margin:6px 6px 0 0;"></i>
 </ion-nav-buttons>
-  <ion-content class="no-header">
+  <ion-content class="no-header has-footer" has-bouncing="false" lazy-scroll>
   <!-- <ion-slide-box active-slide="myActiveSlide"> -->
-  <ion-slide-box>
+  <ion-slide-box class="main-photo" does-continue="true" autoplay="true">
   <ion-slide>
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+    <img image-lazy-src="http://dummyimage.com/400x400&text=Daniel Clark" style="width:100%;">
   </ion-slide>
   <ion-slide>
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+    <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
   </ion-slide>
   <ion-slide>
-    <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
+    <img image-lazy-src="http://dummyimage.com/400x400/98f279&text=Daniel Clark" style="width:100%;">
   </ion-slide>
 </ion-slide-box>
+  <div class="row">
+    <div class="col col-80">
+    <h4 class="d-title">商品标题商品标题商品标题商品标题商品标题</h4>
+    <p>
+      <span class="cprice">¥39</span>
+      <span class="price">¥62</span>
+      <span class="promot-tag"><span class="badge badge-r badge-small badge-assertive">包邮</span></span>
+      <span class="gain-bookmark">+39</span>
+    </p>
+    </div>
+    <div class="col col-20">
+      <label class="button collected light-bg icon-top-btn">
+        <!-- <i class="icon ion-ios-heart-outline icon-collected"></i> -->
+        <i class="icon ion-ios-heart icon-collected"></i>
+        <span>收藏</span>
+      </label>
+    </div>
+  </div>
+  <!-- <div class="promot-info">
+    <hr class="divider-line">
+    <div class="row">
+      <div class="col col-20 promot-head">
+        <span>促销</span>
+      </div>
+      <div class="col col-80">
+        <div>
+          <span class="badge badge-r badge-small badge-assertive-outline">满就减</span>&nbsp;满2件减5元，满3件减10元
+        </div>
+        <div>
+          <span class="badge badge-r badge-small badge-assertive-outline">满就减</span>&nbsp;满2件减5元，满3件减10元
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="quality-assurance">
+    <hr class="divider-line">
+    <div class="row qualitys">
+     <span><i class="ion-android-checkmark-circle assertive"></i>&nbsp;100%人工质检</span>&nbsp;&nbsp;
+      <span><i class="ion-android-checkmark-circle assertive"></i>&nbsp;24小时发货</span>&nbsp;&nbsp;
+      <span><i class="ion-android-checkmark-circle assertive"></i>&nbsp;7天无理由退货</span>&nbsp;&nbsp;
+    </div>
+  </div> -->
+  <div class="d-propertys">
+    <div class="divider-rec"></div>
+    <div class="propertys">
+      <h5>颜色</h5>
+      <div >
+        <button class="propertys-item active" ng-class="">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+      </div>
+    </div>
+    <div class="propertys" >
+      <h5>规格</h5>
+      <div >
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+        <button class="propertys-item">红色</button>
+      </div>
+    </div>
+    <div class="divider-rec"></div>
+  </div>
+  <div class="d-menus" ng-init="menu_active_index=1;">
+      <div class="button-bar full-btn">
+        <a class="button button-light" ng-class="{'active':menu_active_index==1}" ng-click="menu_active_index=1;">商品信息</a>
+        <a class="button button-light" ng-class="{'active':menu_active_index==2}" ng-click="menu_active_index=2;">商品参数</a>
+        <a class="button button-light" ng-class="{'active':menu_active_index==3}" ng-click="menu_active_index=3;">咨询与售后</a>
+      </div>
+      <!-- 标签 1 内容 -->
+      <div ng-if="menu_active_index==1" class="d-m d-m-info">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark">
+        <img src="http://dummyimage.com/400x400/98f279&text=Daniel Clark">
+      </div>
 
+      <!-- 标签 2 内容 -->
+      <div ng-if="menu_active_index==2" class="d-m d-m-argument">
+      商品参数
+      </div>
+
+      <!-- 标签 3 内容 -->
+      <div ng-if="menu_active_index==3" class="d-m d-m-after-sales">
+      咨询与售后
+      </div>
+  </div>
+  <div>
+    
+  </div>
   </ion-content>
+  <ion-footer-bar class="no-padding detail-bottom ">
+    <div class="button-bar full-btn">
+      <a class="button button-light"><i class="ion-ios-cart-outline"></i>&nbsp;(0)</a>
+      <a class="button button-balanced">加入购物车</a>
+      <a class="button button-assertive">立即购买</a>
+    </div>
+  </ion-footer-bar>
 </ion-view>

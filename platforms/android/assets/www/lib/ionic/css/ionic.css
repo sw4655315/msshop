@@ -8903,11 +8903,13 @@ progress {
   border-color: transparent;
   background: none;
   box-shadow: none; }
+  /*
   .button-clear.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: transparent; }
+    */
   .button-clear.button-icon {
     border-color: transparent;
     background: none; }

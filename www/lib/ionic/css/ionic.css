@@ -8903,11 +8903,14 @@ progress {
   border-color: transparent;
   background: none;
   box-shadow: none; }
+  /**修改：*/
+  /*
   .button-clear.button-clear {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: transparent; }
+    */
   .button-clear.button-icon {
     border-color: transparent;
     background: none; }
@@ -8919,14 +8922,17 @@ progress {
   transition: opacity 0.1s;
   background: none;
   box-shadow: none; }
-  .button-outline.button-outline {
+  /**修改：*/
+  /*.button-outline.button-outline {
     border-color: transparent;
     background: transparent;
-    color: transparent; }
-    .button-outline.button-outline.active, .button-outline.button-outline.activated {
+    color: transparent; }*/
+    .button-outline.active, .button-outline.activated {
       background-color: transparent;
       box-shadow: none;
-      color: #fff; }
+      /**修改：*/
+      border:none;
+      color: #000; }
 
 .padding > .button.button-block:first-child {
   margin-top: 0; }

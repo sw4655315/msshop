@@ -1,10 +1,10 @@
-<ion-view cache-view="false" view-title="编辑收货地址">
+<ion-view  view-title="编辑收货地址">
 <ion-nav-buttons side="right">
       <a class="button button-clear" >
         保存
       </a>
 </ion-nav-buttons>
-  <ion-content>
+  <ion-content scroll="false" has-bouncing="false">
     <ion-list>
         <ion-item class="item item-input">
             <span class="input-label" style="max-width: 27%;">收货人：</span>
@@ -12,15 +12,17 @@
         </ion-item>
         <ion-item class="item item-input">
             <span class="input-label" style="max-width: 27%;">手机号码：</span>
-            <input type="dates">
-        </ion-item>
-        <ion-item class="item item-input">
-            <span class="input-label" style="max-width: 27%;">所在地区：</span>
+            <!-- <input type="datetime-local"> -->
             <input type="text">
         </ion-item>
         <ion-item class="item item-input">
+            <span class="input-label" style="max-width: 27%;">所在地区：</span>
+            <input type="text" id="cityText" placeholder="请选择" >
+            <input type="hidden" id="cityValue" >
+        </ion-item>
+        <ion-item class="item item-input">
             <span class="input-label" style="max-width: 27%;">详细地址：</span>
-            <ionic-city-picker placeholder="出发城市" tag="-" backdrop="true" backdrop-click-to-close="false" css-class="xxx" okText="确定" button-clicked="vm.cb()" ></ionic-city-picker>
+            <input type="text" >
         </ion-item>
         <div class="item item-divider divider-small"></div>
         <ion-item class="item-toggle-c">

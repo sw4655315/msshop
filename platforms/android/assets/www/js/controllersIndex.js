@@ -1,6 +1,6 @@
 angular.module('starter.controllersIndex', [])
 
-.controller('index', function($scope, $ionicModal, $timeout) {
+.controller('index', function($scope, $ionicModal, $timeout,$state) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -26,18 +26,20 @@ angular.module('starter.controllersIndex', [])
 
   // Open the login modal
   $scope.login = function() {
-    $scope.modal.show();
+    $state.go('app.address');
+    // $scope.modal.show();
   };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    $state.go('app.address');
+    // console.log('Doing login', $scope.loginData);
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    // // Simulate a login delay. Remove this and replace with your login
+    // // code if using a login system
+    // $timeout(function() {
+    //   $scope.closeLogin();
+    // }, 1000);
   };
 })
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,$ionicSideMenuDelegate) {
@@ -82,7 +84,8 @@ angular.module('starter.controllersIndex', [])
 
   // Open the login modal
   $scope.search = function() {
-    $scope.searchModal.show();
+    //$scope.searchModal.show();
+    // $state.go('app.search');
   };
 
     // Open the login modal
@@ -106,15 +109,16 @@ angular.module('starter.controllersIndex', [])
 })
 
 .controller('PlaylistsCtrl', function($scope,$rootScope,$kit,$stateParams) {
-  $scope.paras = $stateParams;
+  $scope.pageNumber = $stateParams.pageNumber || 1;
   $scope.pLists = [];
   $scope.loadOver = false;
   $scope.load = function(){
-    $kit.autoPost('/product/promote',{a:1},function(json){
+    $kit.autoPost('product/list/'+$scope.pageNumber++,{a:1},function(json){
       $scope.pLists = $scope.pLists.concat(json.pLists);
       $scope.page = json.page;
+    },false,function(){
       $scope.$broadcast('scroll.refreshComplete');
-      $scope.$broadcast('scroll.infiniteScrollComplete'); 
+      $scope.$broadcast('scroll.infiniteScrollComplete');
     })
   }
   $scope.reload = function(){
@@ -177,21 +181,27 @@ angular.module('starter.controllersIndex', [])
   $scope.paras = $stateParams;
 })
 .controller('addressEditCtrl', function($scope, $stateParams) {
+  var area1 = new LArea();
+  area1.init({
+      'trigger': '#cityText', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+      'valueTo': '#cityValue', //选择完毕后id属性输出到该位置
+      'keys': {
+          id: 'id',
+          name: 'name'
+      }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+      'type': 1, //数据源类型
+      'data': LAreaData //数据源
+  });
+  area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
   $scope.paras = $stateParams;
 })
 .controller('orderListCtrl', function($scope, $stateParams) {
   $scope.paras = $stateParams;
-  // switch ($stateParams.op) {
-  //   case 'all':
-  //     // statements_1
-  //     break;
-  //   case '123':
-  //     // statements_1
-  //     break;
-  //   default:
-  //     // statements_def
-  //     break;
-  // }
-
+})
+.controller('loginCtrl', function($scope, $stateParams) {
+  $scope.paras = $stateParams;
+})
+.controller('cartCtrl', function($scope, $stateParams) {
+  $scope.paras = $stateParams;
 })
 ;
