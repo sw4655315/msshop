@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>areapicker demo</title>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="areapicker.js"></script>
+    <script src="iscroll.js"></script>
+    <link href="areapicker.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+
+            /*不带默认值*/
+            $('#area').areapicker({}, function (areaArr) {
+                //确定时回调方法:
+                //areaArr:已经选择的地区
+                $('#area').text("已选择 省:" + areaArr[0] + " 市:" + areaArr[1] + " 区/县:" + areaArr[2]);
+            }, function (areaArr) {
+                //取消时回调方法:
+                //areaArr:上次选择的地区
+                $('#area').text("已取消 省:" + areaArr[0] + " 市:" + areaArr[1] + " 区/县:" + areaArr[2]);
+            });
+
+
+            /*带默认值*/
+            //河北省秦皇岛市北戴河区
+            var defaultarea = new Array();
+            defaultarea[0] = "江苏省";
+            defaultarea[1] = "徐州市";
+            defaultarea[2] = "沛县";
+            $('#area2').areapicker({ areaArr: defaultarea }, function (areaArr) {
+                //确定时回调方法:
+                //areaArr:已经选择的地区
+                $('#area2').val("已选择 省:" + areaArr[0] + " 市:" + areaArr[1] + " 区/县:" + areaArr[2]);
+            }, function (areaArr) {
+                //取消时回调方法:
+                //areaArr:上次选择的地区
+                $('#area2').val("已取消 省:" + areaArr[0] + " 市:" + areaArr[1] + " 区/县:" + areaArr[2]);
+            });
+        });
+    </script>
+	<style>
+		#daywrapper{left: 57%;}
+		#monthwrapper{left:29%}
+		#datePage{width: 90%;}
+		#daywrapper ul li,
+		#monthwrapper ul li,
+		#yearwrapper ul li{
+			width:80%;
+			overflow:hidden;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			text-overflow: ellipsis;/* IE/Safari */
+			-ms-text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;/* Opera */
+			-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/
+		}
+	</style>
+</head>
+
+<body style="background-color:#fff;">
+    <br />
+    <a href="javascript:;" class="f12 green" id="area">选择地区(没有默认值)...</a>
+    <br /><br /><br />
+
+    <input href="javascript:;" class="f12 green" id="area2" placeholder="选择地区(有默认值[河北省秦皇岛市北戴河区])" readonly>
+</body>
+</html>

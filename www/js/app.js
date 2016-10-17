@@ -24,12 +24,5 @@ ionicapp.run(function($ionicPlatform,$rootScope,$ionicLoading) {
       StatusBar.styleDefault();
     }
   });
-  $rootScope.loading = function(){
-    $ionicLoading.show();
-  }
-  $rootScope.loaded = function(){
-    $ionicLoading.hide();
-  }
 })
-
 ;

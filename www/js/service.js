@@ -6,27 +6,8 @@ angular.module(
 	kit.uri = 'http://rap.taobao.org/mockjsdata/5933/app/';
 
 // http://rap.taobao.org/mockjsdata/5933/app/product/list
-	kit.isEmpty = function(obj){
-		return obj === void 0 
-			|| typeof obj  === "undefined"
-			|| obj === null 
-			|| obj === ''
-			|| obj === 'null';
-	}
-	kit.isExist = function(obj){
-		if(kit.isEmpty(obj)) return !1;
-		if(angular.isArray(obj)) return obj.length > 0;
-		if(angular.isObject(obj)) return !isEmptyObject(obj);
-		return !0;
-	}
-
-	function isEmptyObject(e){
-		var t;
-		for (t in e) 
-			return !1;
-		return !0;
-	}
-
+	kit.isEmpty = isEmpty;
+	kit.isExist = isExist;
 	kit.alert = function(msg,yes,title){
 		//  alert（警告） 对话框
 	    $ionicPopup.alert({
@@ -61,7 +42,7 @@ angular.module(
 		})
 		.success(successFun|| function(){})
 		.error(errorFun || function(){})
-		.finally(finallyFun||function(){});
+		['finally'](finallyFun||function(){});
 	};
 	kit.ap = kit.autoPost = function(url,data,success,error,finallyFun){
 		kit.post(url,data
@@ -84,7 +65,7 @@ angular.module(
 		})
 		.success(success|| function(){})
 		.error(error || function(){})
-		.finally(finallyFun||function(){});
+		['finally'](finallyFun||function(){});
 	};
 	kit.ag = kit.autoGet = function(url,data,success,error,finallyFun){
 		kit.get(url,data
@@ -152,6 +133,98 @@ angular.module(
         localStorageServiceProvider.prefix = 'msshop';
         // localStorageServiceProvider.storageType = "sessionStorage";
     })
+.config(function($httpProvider){
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+        // Override $http service's default transformRequest
+        $httpProvider.defaults.transformRequest = [function(data) {
+        /**
+         * The workhorse; converts an object to x-www-form-urlencoded serialization.
+         * @param {Object} obj
+         * @return {String}
+         */
+        var param = function(obj) {
+            var query = '';
+            var name, value, fullSubName, subName, subValue, innerObj, i;
+
+            for (name in obj) {
+                value = obj[name];
+
+                if (value instanceof Array) {
+                    for (i = 0; i < value.length; ++i) {
+                        subValue = value[i];
+                        fullSubName = name + '[' + i + ']';
+                        innerObj = {};
+                        innerObj[fullSubName] = subValue;
+                        query += param(innerObj) + '&';
+                    }
+                } else if (value instanceof Object) {
+                    for (subName in value) {
+                        subValue = value[subName];
+                        fullSubName = name + '[' + subName + ']';
+                        innerObj = {};
+                        innerObj[fullSubName] = subValue;
+                        query += param(innerObj) + '&';
+                    }
+                } else if (value !== undefined && value !== null) {
+                    query += encodeURIComponent(name) + '='
+                            + encodeURIComponent(value) + '&';
+                }
+            }
+
+            return query.length ? query.substr(0, query.length - 1) : query;
+        };
+
+        return angular.isObject(data) && String(data) !== '[object File]'
+                ? param(data)
+                : data;
+    }];
+    })
+    .filter('trustHtml', function ($sce) {
+        return function (input) {
+            return $sce.trustAsHtml(input);
+        }
+    })
+    .filter('trustSrc', function ($sce) {
+        return function (input) {
+            return $sce.trustAsResourceUrl(input);
+        }
+    })
 ;
 
+
+/**
+     * 判断是否为空
+     * @param  {[type]}  obj [description]
+     * @return {Boolean}     [description]
+     */
+    function isEmpty(obj){
+        return obj === void 0 
+                || typeof obj  === "undefined"
+                || obj === null 
+                || obj === ''
+                || obj === 'null';
+    }
+    /**
+     * 判断是否存在
+     * @param  {[type]}  obj [description]
+     * @return {Boolean}     [description]
+     */
+    function isExist(obj){
+        if(isEmpty(obj)) return !1;
+        if(angular.isArray(obj)) return obj.length > 0;
+        if(angular.isObject(obj)) return !isEmptyObject(obj);
+        return !0;
+    }
+
+/**
+ * 判断是否为空对象
+ * @param  {[type]}  e [description]
+ * @return {Boolean}   [description]
+ */
+    function isEmptyObject(e){
+        var t;
+        for (t in e) 
+            return !1;
+        return !0;
+    }
 
