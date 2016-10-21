@@ -128,11 +128,11 @@ angular.module(
     }
     return stg;
 })
-.config(function(localStorageServiceProvider){
-        //本地存储设置
-        localStorageServiceProvider.prefix = 'msshop';
-        // localStorageServiceProvider.storageType = "sessionStorage";
-    })
+// .config(function(localStorageServiceProvider){
+//         //本地存储设置
+//         localStorageServiceProvider.prefix = 'msshop';
+//         // localStorageServiceProvider.storageType = "sessionStorage";
+//     })
 .config(function($httpProvider){
         $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
         // Override $http service's default transformRequest

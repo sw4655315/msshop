@@ -5,6 +5,9 @@
 html{
     font-family: '黑体';
 }
+.min-font *{
+    font-size: 12px !important;
+}
 .badge-r{
     border-radius: 0 !important;
     font-size: .8rem;
@@ -45,6 +48,35 @@ html{
 .button-bar.no-radius > .button:first-child{
     border-radius: 0 !important;
 }
+.platform-android .action-sheet-group{
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #f1f2f3;
+}
+.platform-android .action-sheet .action-sheet-title{
+    text-align: center;
+}
+.platform-android .action-sheet .action-sheet-title{
+    font-size: 13px;
+    text-align: center;
+    color: #888;
+    border-bottom: 1px solid #ccc;
+}
+.platform-android .action-sheet .button{
+    font-size: 21px;
+    text-align: center;
+    color: #007aff;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+
 .p-list .item-image{
     height: 50vw;
     background-image: url(../img/MSSHOP.png);
@@ -365,6 +397,3 @@ html{
 .cart-count .cart-op.op-add{
     margin-left: 5px;
 }
-
-
-
